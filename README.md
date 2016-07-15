@@ -1,0 +1,2 @@
+# Java
+while(!success=try()));
