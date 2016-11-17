@@ -92,6 +92,45 @@ lastIndexOfSubList:11
 
 ```
 
+### 4.  How to find minimum and maximum of a list?
+
+Following example uses min & max Methods to find minimum & maximum of the List.
+##### Example
+```
+import java.util.Collections;
+import java.util.Arrays;
+import java.util.List;
+public class FindMinAndMaxInAList
+{
+	public static void main(String args[])
+	{
+		List<String> list=Arrays.asList("one two three four five six one three four".split(" "));
+		System.out.println(list);
+		System.out.println("Max : "+ Collections.max(list));
+		System.out.println("Min : "+Collections.min(list));
+	}
+}
+
+```
+##### Output
+```
+F:\github\Java\collections>javac FindMinAndMaxInAList.java
+F:\github\Java\collections>java FindMinAndMaxInAList
+[one, two, three, four, five, six, one, three, four]
+Max : two
+Min : five
+```
+
+
+##### Note
+```
+The Collections.max and Collections.min compare objects in their natural order.
+
+For Strings, it's lexicographic (i.e. alphabetic) comparison.
+
+Amongst the many uses of natural order comparison is the fact you can easily sort String alphabetically.
+```
+
 ---
 
                                     Thanks for reading!
