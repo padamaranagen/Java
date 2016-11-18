@@ -131,6 +131,59 @@ For Strings, it's lexicographic (i.e. alphabetic) comparison.
 Amongst the many uses of natural order comparison is the fact you can easily sort String alphabetically.
 ```
 
+### 5.  How to convert an array into a collection?
+
+Following example demonstrates to convert an array into a collection Arrays.asList(name) method of Java Util class.
+
+##### Example
+```
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
+public class ConvertArrayIntoCollection
+{
+	public static void main(String args[])throws IOException
+	{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("How many elements you want to add to the array");
+		int n=Integer.parseInt(br.readLine());
+		String[] name=new String[n];
+		for(int i=0;i<n;i++)
+		{
+			name[i]=br.readLine();
+		}
+		List<String> list=Arrays.asList(name);
+		System.out.println();
+		for(String li:list)
+		{
+			String str=li;
+			System.out.println(str+ " ");
+		}
+	}
+}
+```
+##### Output
+```
+F:\github\Java\collections>javac ConvertArrayIntoCollection.java
+F:\github\Java\collections>java ConvertArrayIntoCollection
+How many elements you want to add to the array
+4
+one
+two
+three
+four
+
+one
+two
+three
+four
+```
+
+
+
+
 ---
 
                                     Thanks for reading!
