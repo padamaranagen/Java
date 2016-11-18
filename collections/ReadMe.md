@@ -180,6 +180,98 @@ two
 three
 four
 ```
+### 6.  Difference Between HashSet And TreeSet
+
+HashSet and TreeSet are both implements the Set interface.
+>Ordering : HashSet stores the object in random order . There is no guarantee that the element we  inserted first in the HashSet  will be printed first in the output .
+ For example   
+```
+import java.util.HashSet;
+public class HashSetExample
+{
+	public static void main(String args[])
+	{
+		HashSet<String> obj1=new HashSet<String>();
+		obj1.add("My");
+		obj1.add("name");
+		obj1.add("is");
+		obj1.add("nagendra");
+		System.out.println(obj1);
+	}
+}
+```
+##### Output
+```
+F:\github\Java\collections>javac HashSetExample.java
+F:\github\Java\collections>java HashSetExample
+[nagendra, name, is, My]
+```
+
+>Elements are sorted according to the natural ordering of its elements in TreeSet. If the objects can not 
+be sorted in natural order than use compareTo() method to sort the elements of TreeSet object .
+
+##### Example
+
+```
+import java.util.TreeSet;
+public class TreeSetExample
+{
+	public static void main(String args[])
+	{
+		TreeSet<String> obj1=new TreeSet<String>();
+		obj1.add("My");
+		obj1.add("name");
+		obj1.add("is");
+		obj1.add("nagendra");
+		System.out.println(obj1);
+	}
+}
+```
+
+##### Output
+```
+F:\github\Java\collections>javac TreeSetExample.java
+F:\github\Java\collections>java TreeSetExample
+[My, is, nagendra, name]
+```
+
+>Null value :   HashSet can store null object while TreeSet does not allow null object. If one try to store null object in TreeSet object , it will throw Null Pointer Exception.
+
+> Performance : HashSet take constant time performance for the basic operations like add, remove contains and  size.While TreeSet guarantees log(n) time cost for the basic operations (add,remove,contains).
+
+> Speed : HashSet is much faster than TreeSet,as performance time of HashSet is constant against the log time of TreeSet for most operations (add,remove ,contains and size) . Iteration performance of HashSet mainly depends on the load factor and initial capacity parameters. 
+
+>Internal implementation :  As we have already discussed How hashset internally works in java thus, in one line HashSet are internally backed by hashmap. While TreeSet is backed by a  Navigable  TreeMap. 
+
+>Functionality :    TreeSet is rich in functionality as compare to HashSet. Functions like pollFirst(),pollLast(),first(),last(),ceiling(),lower() etc. makes TreeSet easier to use than HashSet. 
+
+>Comparision : HashSet uses equals() method for comparison in java while TreeSet uses compareTo() method for maintaining ordering .
+
+##### Similarities Between HashSet and TreeSet
+
+>Unique Elements :   Since HashSet and TreeSet both implements Set interface . Both are allowed to store only unique elements in their objects. Thus there can never be any duplicate elements inside the HashSet and TreeSet objects.
+
+>Not Thread Safe : HashSet and TreeSet both are not synchronized or not thread safe.HashSet and TreeSet, both implementations are not synchronized. If multiple threads access a hash set/ tree set concurrently, and at least one of the threads modifies the set, it must be synchronized externally.
+
+>Clone() method copy technique:  Both HashSet and TreeSet uses shallow copy technique to create a clone of  their objects .
+
+>Fail-fast Iterators :  The iterators returned by this class's  method are fail-fast: if the set is modified at any time after the iterator is  created, in any way except through the iterator's own  remove method, the iterator will throw a  ConcurrentModificationException.  Thus, in the face of concurrent modification, the iterator fails quickly and cleanly, rather than risking arbitrary, non-deterministic behavior at   an undetermined time in the future.
+
+##### When to prefer TreeSet over HashSet
+
+>Sorted unique elements are required instead of unique elements.The sorted list given by TreeSet is always in ascending order.
+
+>TreeSet has greater locality than HashSet.
+
+ ```  If two entries  are near by in the order , then TreeSet places them near each other in data structure and hence in memory, while HashSet spreads the entries all over memory  regardless of the keys they are associated to. ```
+     
+```As we know Data reads from the hard drive takes much more latency time than data read from the cache or memory. In case data needs to be read from hard drive than prefer TreeSet as it has greater locality than HashSet.```
+
+>TreeSet uses Red- Black tree algorithm underneath to sort out the elements. When one need to perform read/write operations frequently , then TreeSet is a good choice.
+   
+
+
+
 
 
 
