@@ -1,0 +1,99 @@
+Fix Java was Started but Returned Exit Code=13 in Eclipse
+By ARUN in How To 193 Comments Tags: Education, How To, Software
+If you are  getting an  error saying “Java was Started but Returned Exit Code=13” during Eclipse installation,  then here is fix for that.  Even I faced this problem during eclipse installation on my windows operating system. After searching on google I found that many of the users facing similar issue with Eclipse. If you are one of them, then here is the solution for the error.
+
+
+Reasons  for Java was Started but Returned Exit Code=13 Error:
+ Java was Started but Returned Exit Code=13 Error
+
+Before going to the solution, let us know why it is showing that error. If you know the problem behind this issue we can easily fix that error.
+
+Reason 1: The most common reason behind this problem is, we are trying to install different bit version-that is, 64 bit or 32 bit  version of the software. It maybe either Eclipse or Java.
+
+Reason 2: Configuration mistake in Eclipse.ini  file
+
+Reason 3: Special characters ( #, !, @) in Eclipse installation directory
+
+Reason 4: You maybe using latest version of Eclipse, but you might be using  wrong version or unsupported version  of Java Virtual Machine (JVM)
+
+The above are the main reasons causing that Exit code =13 in eclipse. Now let us know how to fix that error.
+
+ 
+
+How to Fix Java was Started but Returned Exit Code=13 Error in Eclipse
+Solution for Reason 1:
+
+Check which version of operating system you are running. To check that, open windows explorer by pressing Win+E key on your keyboard.
+
+finding 32bit or 64 bit version windows 8 os
+click on the image to enlarge it.
+Now on This PC (My  Computer)  which you found on left side, Select that and right click on mouse. In that pop up menu choose Properties option.  When you click that properties option you will see system properties window. In  that window have a look on “System Type” option.
+
+In that  System type you will see 64-bit Operating System. That’s what we need to know.
+
+Now we know which version of operating system we are running.
+
+After knowing operating system version, make sure you downloaded the 64-bit version of Eclipse as well as 64-bit version of Java software.
+
+If you downloaded 32 bit version (X86) of Java or eclipse any one of them, you will get that Exit code=13 error.
+
+Please double check the versions which you have downloaded. Because during installation it won’t show any error regarding incompact able version. It will install smoothly.
+
+In my case I have installed 32 bit version of Java so I’m getting that error.
+
+ 
+
+Solution for Reason 2:
+
+Maybe you might have made a mistake in configuring Eclipse.ini file, which can be  found on Eclipse directory  itself.  You can check this official guide if needed.
+
+Here the few important rules to be noted while specifying -VM option
+
+The -vm option and its value (the path) must be on separate lines.
+The value must be the full absolute or relative path to the Java executable, not just to the Java home directory.
+The -vm option must occur before the -vmargs option, since everything after -vmargs is passed directly to the JVM.
+You can check the below screenshot of my  working Eclipse.ini configuration.
+
+eclipse.ini working file -vm option
+
+ 
+
+Solution for Reason 3:
+
+You have might have special characters like #, !, @  in eclipse installation directory. That is, if  your eclipse installation address contains any special characters, then it shows that error. So make sure you don’t have any special characters.
+
+Example:
+
+Before fixing special character
+
+C:\# IDE\eclipse 3.7\
+
+Have you noticed that “#” character?
+
+After fixing that special character in address
+
+C:\IDE\eclipse 3.7\
+
+and that solved the problem.
+
+ 
+
+Reason 4 Solution:
+
+Maybe you are using latest eclipse version and unsupported Java version.
+
+check java version command windows
+
+To check which version of java you are using open command prompt by pressing win+R key and type cmd and press enter. Now in that console type Java -version command to know java version.
+
+Now research whether eclipse support that version or not.
+
+(or)
+
+You can open “readme” folder in Eclipse folder and open readme_eclipse.html to see which version it supports.
+
+(or)
+
+I recommend you to download both Java and eclipse latest version.
+
+Hope you have fixed  Java was Started but Returned Exit Code=13 Error in Eclipse by following this post. Let us know which reason causing you that error by comment.
